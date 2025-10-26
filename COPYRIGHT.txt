@@ -1,1 +1,45 @@
+RESTRICTED USE NOTICE AND COPYRIGHT AGREEMENT: DICTIONARY DATA
 
+This document serves as the governing legal notice for the dictionary data (the "Data") contained within this repository, specifically saved as a JSON file.
+
+1. Copyright Ownership and Status
+
+The entire Data and all related documentation are the exclusive intellectual property of the authors:
+
+Mr. Mr. Gaikhuanlung Gangmei (Copyright Holder)
+
+Mr. Ebenezer Gangmei (Copyright Holder)
+
+All Rights Are Reserved. This Data is protected under international copyright laws. The purpose of this document is to explicitly assert the author's exclusive copyright, ensuring that the default legal status—where all rights are reserved and no one has permission to use the work—is clearly communicated, thereby preventing the Data from being mistaken for an open-source project.$^1$
+
+2. Prohibition on Use, Reproduction, and Distribution
+
+NO LICENSE IS GRANTED.
+
+The presence of this Data in a public repository (such as GitHub) does not constitute a grant of permission or license for any form of use, reproduction, distribution, adaptation, or creation of derivative works, whether for commercial or non-commercial purposes.
+
+Specifically, you may not:
+
+Copy, modify, or adapt the Data, in whole or in part.
+
+Distribute, sublicense, publish, or publicly display the Data.
+
+Use the Data in any software application, website, or research project.
+
+3. Mandatory Permission and Contact
+
+Any individual or entity wishing to use the Data for any purpose MUST obtain prior express written permission from the Copyright Holders.
+
+To request permission or inquire about a potential license, please contact the authors directly:
+
+Admin/Copyright Contact:
+
+Mr. Gaikhuanlung Gangmei (fb/gaikhuanlung.gangmei)
+
+Mr. Ebenezer Gangmei
+
+[PLEASE INSERT YOUR PREFERRED CONTACT EMAIL HERE]
+
+By accessing or viewing this Data, you acknowledge and agree to abide by these terms. Unauthorized use is strictly prohibited and may result in legal action.
+
+This notice serves as the sole governing terms for the use of the Data. No other license (such as MIT, Apache, or GNU) applies or is implied.
