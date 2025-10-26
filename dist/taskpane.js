@@ -3,7 +3,7 @@ let lastSelection = "";
 
 async function loadDictionary() {
   const localJson = "dictionary.json"; // fallback
-  const githubJson = "https://github.com/ebenezergangmei/RongmeiDictionary/dist/dictionary.json";
+  const githubJson = "https://ebenezergangmei.github.io/RongmeiDictionary/dist/dictionary.json";
 
   try {
     // Try fetching from GitHub
