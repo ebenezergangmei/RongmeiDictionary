@@ -15,7 +15,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://github.com/ebenezergangmei//RongmeiDictionary/dist/taskpane.html"/>
+    <SourceLocation DefaultValue="ebenezergangmei.github.io/RongmeiDictionary/dist/taskpane.html"/>
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
