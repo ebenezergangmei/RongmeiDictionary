@@ -38,8 +38,6 @@ Mr. Gaikhuanlung Gangmei (fb/gaikhuanlung.gangmei)
 
 Mr. Ebenezer Gangmei
 
-[PLEASE INSERT YOUR PREFERRED CONTACT EMAIL HERE]
-
 By accessing or viewing this Data, you acknowledge and agree to abide by these terms. Unauthorized use is strictly prohibited and may result in legal action.
 
 This notice serves as the sole governing terms for the use of the Data. No other license (such as MIT, Apache, or GNU) applies or is implied.
