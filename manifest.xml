@@ -2,20 +2,21 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:type="TaskPaneApp">
-
-  <Id>8d4b3a12-99b4-4ef3-b1c4-1234567890ab</Id>
+  <Id>1f9a9c4f-78b1-42e2-9abf-1234567890ab</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Rongmei Tools</ProviderName>
+  <ProviderName>Ebenezer Gangmei</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Rongmei Dictionary"/>
-  <Description DefaultValue="English–Rongmei Dictionary Add-in"/>
-
+  <Description DefaultValue="Lookup Rongmei meanings for English words."/>
+  <IconUrl DefaultValue="https://ebenezergangmei.github.io/RongmeiDictionary/dist/icon.png"/>
+  <SupportUrl DefaultValue="https://ebenezergangmei.github.io/RongmeiDictionary/"/>
+  
   <Hosts>
     <Host Name="Document"/>
   </Hosts>
-
+  
   <DefaultSettings>
-             <SourceLocation DefaultValue="https://ebenezergangmei.github.io/RongmeiDictionary/dist/taskpane.html"/>
+    <SourceLocation DefaultValue="https://ebenezergangmei.github.io/RongmeiDictionary/dist/taskpane.html"/>
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
