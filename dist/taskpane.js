@@ -1,45 +1,69 @@
-let dictionary = [];
-let allResults = [];
-
-const githubJson = "https://ebenezergangmei.github.io/RongmeiDictionary/dist/dictionary.json";
-
-async function loadDictionary() {
-  try {
-    const response = await fetch(githubJson);
-    dictionary = await response.json();
-    document.getElementById("output").innerHTML = "Dictionary loaded from GitHub. Select a word or phrase.";
-  } catch (err) {
-    console.error("Failed to load GitHub dictionary:", err);
-    document.getElementById("output").innerHTML = "⚠️ Could not load GitHub dictionary.";
-  }
-}
-
-// Call this on page load
-Office.onReady((info) => {
+Office.onReady(info => {
   if (info.host === Office.HostType.Word) {
-    loadDictionary();
+    console.log("Rongmei Dictionary Add-in is ready!");
+    setupSelectionHandler();
   }
 });
 
-// Show meanings for selected words
-async function showMeanings(words) {
-  words.forEach(word => {
-    const entry = dictionary.find(e => e.English.toLowerCase() === word.toLowerCase());
-    if (entry) allResults.push(entry);
-  });
+const dictionaryUrl = "https://ebenezergangmei.github.io/RongmeiDictionary/dist/dictionary.json";
+let dictionaryData = [];
 
-  document.getElementById("output").innerHTML = allResults.map((e,i) =>
-    `<b>${i+1}. ${e.English}</b>: ${e.Rongmei}`
-  ).join("<br><br>");
+// Load the dictionary from GitHub Pages
+async function loadDictionary() {
+  try {
+    const response = await fetch(dictionaryUrl);
+    if (!response.ok) throw new Error("Failed to load dictionary");
+    dictionaryData = await response.json();
+    console.log("Dictionary loaded successfully");
+  } catch (err) {
+    console.error("Error loading dictionary:", err);
+    document.getElementById("output").innerHTML = "❌ Could not load dictionary data.";
+  }
 }
 
-// Get selected text in Word and show meanings
-async function getSelection() {
+// When user selects text
+function setupSelectionHandler() {
+  Office.context.document.addHandlerAsync(Office.EventType.DocumentSelectionChanged, async () => {
+    await showMeaningOfSelection();
+  });
+}
+
+// Show meaning for the selected text
+async function showMeaningOfSelection() {
   await Word.run(async (context) => {
     const selection = context.document.getSelection();
     selection.load("text");
     await context.sync();
-    const words = selection.text.split(/\s+/);
-    showMeanings(words);
+
+    const selectedText = selection.text.trim();
+    const outputDiv = document.getElementById("output");
+
+    if (!selectedText) return;
+
+    // Clear previous results
+    outputDiv.innerHTML = "";
+
+    const words = selectedText.split(/\s+/);
+    let results = [];
+
+    for (let word of words) {
+      const match = dictionaryData.find(entry => entry.English.toLowerCase() === word.toLowerCase());
+      if (match) {
+        results.push(match);
+      }
+    }
+
+    if (results.length > 0) {
+      outputDiv.innerHTML = results.map((entry, i) =>
+        `<div><b>${i + 1}. ${entry.English}</b>: ${entry.Rongmei}</div>`
+      ).join("<hr>");
+    } else {
+      outputDiv.innerHTML = `No meaning found for: <b>${selectedText}</b>`;
+    }
+
+    await context.sync();
   });
 }
+
+// Load dictionary on startup
+loadDictionary();
