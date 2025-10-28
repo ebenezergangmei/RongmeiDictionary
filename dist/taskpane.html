@@ -3,12 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <title>Rongmei Dictionary</title>
-  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script src="taskpane.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <script defer src="taskpane.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 15px;
+    }
+    #status {
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    #output {
+      background: #f7f7f7;
+      padding: 10px;
+      border-radius: 8px;
+      min-height: 100px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Rongmei Dictionary</h2>
-  <div id="output">Select a word or phrase to see meanings here.</div>
+  <h2>📘 Rongmei Dictionary</h2>
+
+  <!-- Status indicator -->
+  <div id="status">Checking version...</div>
+
+  <!-- Lookup results -->
+  <div id="output">Select a word in your Word document to see the meaning here.</div>
+
+  <script>
+    // --- Check if loaded from Online (GitHub Pages) or Offline (Local Drive) ---
+    const currentURL = window.location.href;
+
+    if (currentURL.startsWith("https://")) {
+      document.getElementById("status").innerHTML = "🟢 ONLINE VERSION (GitHub Pages)";
+      document.getElementById("status").style.backgroundColor = "#d4edda";
+      document.getElementById("status").style.color = "#155724";
+    } else if (currentURL.startsWith("file:///")) {
+      document.getElementById("status").innerHTML = "🔴 OFFLINE VERSION (Local Drive)";
+      document.getElementById("status").style.backgroundColor = "#f8d7da";
+      document.getElementById("status").style.color = "#721c24";
+    } else {
+      document.getElementById("status").innerHTML = "⚪ UNKNOWN SOURCE";
+      document.getElementById("status").style.backgroundColor = "#fff3cd";
+      document.getElementById("status").style.color = "#856404";
+    }
+  </script>
 </body>
 </html>
